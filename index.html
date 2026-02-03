@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ULTIMATE TETRIS</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="game-container">
+        <div id="menu-screen" class="screen active">
+            <h1 class="title">ULTIMATE TETRIS</h1>
+            <div class="menu-buttons">
+                <button id="start-normal" class="menu-button">NORMAL</button>
+                <button id="start-40lines" class="menu-button">40 LINES</button>
+                <button id="start-bigbang" class="menu-button">BIG BANG</button>
+            </div>
+            <div class="background-animation"></div>
+        </div>
+
+        <div id="game-screen" class="screen">
+            <div class="side-panel left">
+                <div class="info-box">
+                    <h3>HOLD</h3>
+                    <div class="hold-container">
+                        <canvas id="hold-canvas" width="120" height="120"></canvas>
+                    </div>
+                </div>
+                <div class="info-box">
+                    <h3>SCORE</h3>
+                    <p id="score-display">0</p>
+                </div>
+                <div class="info-box">
+                    <h3>LINES</h3>
+                    <p id="lines-display">0</p>
+                </div>
+                <div class="info-box">
+                    <h3>LEVEL</h3>
+                    <p id="level-display">1</p>
+                </div>
+                <div class="info-box" id="time-container" style="display: none;">
+                    <h3>TIME</h3>
+                    <p id="time-display">0.00</p>
+                </div>
+            </div>
+
+            <div class="main-board-container">
+                <canvas id="game-board" width="300" height="600"></canvas>
+            </div>
+
+            <div class="side-panel right">
+                <div class="info-box">
+                    <h3>NEXT</h3>
+                    <div class="next-container">
+                        <canvas id="next-canvas-1" class="next-canvas" width="120" height="120"></canvas>
+                        <canvas id="next-canvas-2" class="next-canvas" width="120" height="120"></canvas>
+                        <canvas id="next-canvas-3" class="next-canvas" width="120" height="120"></canvas>
+                        <canvas id="next-canvas-4" class="next-canvas" width="120" height="120"></canvas>
+                        <canvas id="next-canvas-5" class="next-canvas" width="120" height="120"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="result-screen" class="overlay" style="display: none;">
+            <div class="overlay-content">
+                <h2>Result</h2>
+                <div id="result-stats">
+                    <p>SCORE: <span id="result-score">0</span></p>
+                    <p>LINES: <span id="result-lines">0</span></p>
+                    <p id="result-time-row" style="display: none;">TIME: <span id="result-time">0.00</span></p>
+                    <p id="result-stage-row" style="display: none;">STAGE: <span id="result-stage">0</span></p>
+                </div>
+                <div class="result-buttons">
+                    <button id="retry-button" class="result-button">RETRY</button>
+                    <button id="menu-button" class="result-button">MENU</button>
+                </div>
+            </div>
+        </div>
+
+        <div id="pause-overlay" class="overlay" style="display: none;">
+             <div class="overlay-content">
+                <h2>PAUSED</h2>
+             </div>
+        </div>
+
+        <div class="touch-controls" id="touch-controls-container">
+            <button id="rotate-left-btn" class="touch-button">↺</button>
+            <button id="rotate-right-btn" class="touch-button">↻</button>
+        </div>
+    </div>
+
+    <script src="script.js" defer></script>
+</body>
+</html>
